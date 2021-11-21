@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Accessories</title>
+
+    <script>
+        function addAlert() {
+            alert("You Added Now!");
+        }
+    </script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="product-list.js" type="module"></script>
+    <script src="./search.js" type="module"></script>
+    <script src="./darkmode.js" type="module"></script>
+    <script src="./cart.js" type="module"></script>
+    <script src="./username.js" type="module"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div id="nav">
+        <nav class="navbar navbar-expand navbar navbar-dark bg-dark ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <i class='bx bxl-apple bx-md' class="d-inline-block align-text-top" id="Apple"></i>
+                </a>
+
+                <div class="collapse navbar-collapse m-1 justify-content-end " id="navbarDropdown">
+                    <div class="d-flex justify-content-center align-items-center" id="searchpanel">
+                        <span style="display: inline-block ;width: 100% ;">
+                        <input type = 'text' placeholder="Search..." id="searchValue" class="form-control mr-sm-2" style="display: none;" >
+                    </span>
+                        <button id='active' class="btn btn-outline-light my-2 my-sm-0" style="display: none;">search</button>
+
+                    </div>
+
+                    <ul class="navbar-nav d-flex align-items-center">
+                        <li class="nav-item ">
+                            <i class='bx bx-search bx-md me-4' id='search'></i>
+                        </li>
+                        <li class="nav-item d-flex">
+                            <i class='bx bx-shopping-bag bx-md' id='cart'></i>
+                            <span id='numqty' class='mx-auto border rounded-circle align-items-center d-flex justify-content-center bg-warning border border-2 border-dark' style='width: 28px; height: 28px;'>0</span>
+                        </li>
+                        <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
+                            <p id="totalprice">
+                                <span style="color: black;">Price : 0 </span>
+                            </p>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-light" id='clear'>Clear</button>
+                        </li>
+
+                    </ul>
+                    <!-- toggle-mode -->
+                    <div class="theme-switch-container">
+                        <span id="toggle-icon">
+                            <span class="toggle-text">LightMode</span>
+                        <i class='bx bxs-sun'></i>
+                        </span>
+                        <label class="theme-switch">
+                            <input type="checkbox">
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </nav>
+
+    <div class="card bg-dark text-dark rounded-0 border-0 " style="background: rgb(242,242,242);">
+        <img src="./image/header.png" class="card-img rounded-0">
+        <div class="card-img-overlay">
+            <div class="container p-lg-5 m-lg-2">
+                <br>
+                <p class="card-text-new">New</p>
+                <h2 class="card-title">It’s magic, remastered.</h2>
+                <p class="card-text">Spatial audio with dynamic head</p>
+                <p class="card-text">tracking in an all-new design.</p>
+                <a href="#Main" class="card-text">Buy product ></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="Heading">
+        <div id="Main">
+            <h1>Featured Apple Accessories</h1>
+            <div class="container">
+                <div class="text-end">
+                    <p id="Hello">
+                        <span> Hello : <span id="username">Guest</span>
+                    </p>
+                    <button type="button" class="btn btn-outline-secondary" id='change'></button>
+                    </span>
+                    
+                </div>
+            </div>
+            <div id="feed" class="container row justify-content-center mx-auto"></div>
+
+</body>
+
+</html>

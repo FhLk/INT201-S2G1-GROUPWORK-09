@@ -1,0 +1,32 @@
+body {
+    font-size: 13px;
+    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-style: normal;
+}
+
+.navbar-nav>li {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar {
+    padding: 0;
+    color: #F5F5F5;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#totolprice {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    margin: auto;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: medium;
+}

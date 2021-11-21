@@ -1,0 +1,160 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.bg-dark {
+    background-color: #2c2c2c;
+    color: white;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.card-text-new {
+    color: chocolate;
+    font-size: 1.5vw;
+}
+
+.card-img-overlay {
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+body {
+    font-size: 13px;
+    font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-style: normal;
+    transition: 0.7s;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
+
+.navbar-nav>li {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.navbar {
+    padding: 0;
+    color: white;
+}
+
+#nav {
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    margin: auto;
+    color: white;
+    /* overflow: hidden; */
+    /* top: 0; */
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#totalprice {
+    border-radius: 25px;
+    background: white;
+    padding: 13.5px;
+    margin: auto;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    font-size: medium;
+    color: black;
+}
+
+h2 {
+    font-size: 3vw;
+}
+
+#Apple {
+    margin-left: auto;
+}
+
+.theme-switch-container {
+    display: flex;
+    right: 25px;
+    top: 30px;
+}
+
+.theme-switch-container span {
+    margin-right: 10px;
+    font-size: 0.85rem;
+}
+
+.toggle-text {
+    position: relative;
+    top: -4px;
+    right: 5px;
+    left: 10px;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 4px;
+    top: 0;
+    transition: 0.4s;
+    width: 60px;
+}
+
+.slider::before {
+    background: #fff;
+    content: "";
+    bottom: 4px;
+    height: 26px;
+    right: 4px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 26px;
+}
+
+input:checked+.slider::before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider::before {
+    border-radius: 50%;
+}
+
+.bx {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+#change {
+    bottom: auto;
+}
+
+#feed :hover {
+    transform: scale(1.00);
+    transition: 0.2s;
+}
