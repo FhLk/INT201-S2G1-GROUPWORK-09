@@ -14,4 +14,4 @@ Member
 
 6.63130500105 วารีวัล พงศ์พันธ์ชัยกุล
 
-Link doc : [https://docs.google.com/document/d/1dvxCykbKs2cM4eJUqkCfmdd5XK-a8ohfPQzznllrsi0/edit?usp=sharing]
+[Link doc :](https://docs.google.com/document/d/1dvxCykbKs2cM4eJUqkCfmdd5XK-a8ohfPQzznllrsi0/edit?usp=sharing)
