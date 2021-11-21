@@ -17,6 +17,7 @@ document.getElementById('search').addEventListener("click", () => {
         let item = [];
         searchValue.addEventListener('keyup', () => {
             let value = new RegExp(searchValue.value, 'i');
+            console.log(value);
             let itemsearch = [];
             products.map((p) => {
                 if (p.name.match(value) != null) {

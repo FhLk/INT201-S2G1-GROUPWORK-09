@@ -25,7 +25,7 @@ body {
     font-size: 13px;
     font-family: SF Pro Text, SF Pro Icons, AOS Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-style: normal;
-    transition: 0.7s;
+    transition: 0.5s;
 }
 
 h1 {
@@ -45,15 +45,18 @@ h1 {
 }
 
 #nav {
-    position: fixed;
+    position: sticky;
     z-index: 10;
     width: 100vw;
     margin: auto;
     color: white;
-    /* overflow: hidden; */
-    /* top: 0; */
+    overflow: hidden;
+    top: 0;
 }
-
+#feed:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
+}
 .center {
     display: block;
     margin-left: auto;
@@ -154,7 +157,3 @@ input:checked+.slider::before {
     bottom: auto;
 }
 
-#feed :hover {
-    transform: scale(1.00);
-    transition: 0.2s;
-}

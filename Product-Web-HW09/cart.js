@@ -24,7 +24,7 @@ function showItemInCart() {
 
 function oldCart(){
     getAllCookie().forEach((i , index) =>{ cart.itemIdIncart.push(getKey(index)); })
-    if(!(cart.itemIdIncart.length === 1)){
+    if(document.cookie.length > 0){
     getAllCookie().forEach((i , index)=>{
         let name = products.find((pd) => {return pd.id == getKey(index);}).name;
         let qty = parseInt(getValue(getKey(index)));

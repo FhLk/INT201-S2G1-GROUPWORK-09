@@ -62,10 +62,8 @@ export function showProduct(list = products) {
 export function recalculate(){
     cart.totalPrice = 0;
     cart.totalQty = 0;
-    cart.items.forEach((pc) => {
-        cart.totalPrice += pc.price * pc.qty;
-        cart.totalQty += pc.qty
-    })
+    cart.totalQty = cart.items.reduce((sum, obj) => { return sum + obj.qty; }, 0);
+    cart.totalPrice = cart.items.reduce((sum, obj) => { return sum + (obj.price * obj.qty); }, 0);
     document.querySelector('#numqty').textContent = cart.totalQty;
     document.querySelector('#totalprice').textContent = cart.totalPrice + " Baht";
 }
