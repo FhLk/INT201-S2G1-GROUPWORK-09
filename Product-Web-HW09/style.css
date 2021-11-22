@@ -53,10 +53,12 @@ h1 {
     overflow: hidden;
     top: 0;
 }
-#feed:hover {
+
+#feed :hover {
     transform: scale(1.05);
-    transition: 0.1s;
+    transition: 0.3s;
 }
+
 .center {
     display: block;
     margin-left: auto;
