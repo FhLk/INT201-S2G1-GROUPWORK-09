@@ -1,10 +1,16 @@
-import { products } from './products.js';
-import { getAllCookie , getKey , getValue , deleteData } from './cookie.js';
-import { recalculate , addItem} from './product-list.js';
+import {getValue , deleteData } from './cookie.js';
+import { recalculate } from './product-list.js';
 
-export let cart = { items: [], itemIdIncart: [] , totalPrice: 0, totalQty: 0 };
-
-oldCart();
+export let cart = { items: [], itemIdIncart: [] , 
+                    totalPrice: 0, totalQty: 0 ,
+                    save : () => {
+                        if((document.cookie.length)){
+                            cart = JSON.parse(getValue('cart'))
+                            recalculate();
+                        }
+                    }
+                    };
+cart.save();
 
 document.getElementById('clear').addEventListener('click', () => {
     cart = { items: [], itemIdIncart: [] , totalPrice: 0, totalQty: 0 }
@@ -20,17 +26,4 @@ function showItemInCart() {
     cart.items.forEach((i) =>{ string += `${i.product} Price : ${i.price} Baht Qty : ${i.qty}\n`})
     string += `\n Total Qty : ${cart.totalQty} \n Total Price : ${cart.totalPrice} Baht `;
     return string;
-}
-
-function oldCart(){
-    getAllCookie().forEach((i , index) =>{ cart.itemIdIncart.push(getKey(index)); })
-    if(document.cookie.length > 0){
-    getAllCookie().forEach((i , index)=>{
-        let name = products.find((pd) => {return pd.id == getKey(index);}).name;
-        let qty = parseInt(getValue(getKey(index)));
-        let price = products.find((pd) => {return pd.id == getKey(index);}).price;
-        addItem(name,getKey(index),qty,price);
-    })
-    }
-    recalculate();
 }

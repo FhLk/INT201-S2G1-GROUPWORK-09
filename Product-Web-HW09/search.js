@@ -2,33 +2,22 @@ import { showProduct } from "./product-list.js";
 import { products } from './products.js';
 
 let toggle = false; 
+const active = document.querySelector('#active');
+const searchValue = document.querySelector('#searchValue');
+
 document.getElementById('search').addEventListener("click", () => {
     toggle = !toggle;
-    console.log(toggle);
     if (toggle) {
-        const active = document.querySelector('#active');
-        const searchValue = document.querySelector('#searchValue');
+        let item = [];
         active.setAttribute('style','display: block; ');
         searchValue.setAttribute('style','display: block;');
         active.addEventListener("click", () => {
-            showProduct(item);
+            (!(item.length))? showProduct(products): showProduct(item);
         })
-
-        let item = [];
         searchValue.addEventListener('keyup', () => {
-            let value = new RegExp(searchValue.value, 'i');
-            console.log(value);
-            let itemsearch = [];
-            products.map((p) => {
-                if (p.name.match(value) != null) {
-                    itemsearch.push(p);
-                }
-            })
-            item = itemsearch;
-            let empty = '';
-            if (empty.match(value) != null) {
-                showProduct(products)
-            }
+            let value = new RegExp(String(searchValue.value), 'i')
+            item = products.filter((p) => { return p.name.match(value) != null;})
+            if(searchValue.value.length === 0){showProduct(products)}
         })
     }else{
         active.setAttribute('style','display: none;');

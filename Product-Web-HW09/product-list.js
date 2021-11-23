@@ -2,7 +2,7 @@ import { products } from './products.js';
 import {cart} from './cart.js';
 import { setCookie } from './cookie.js';
 
-export const feed = document.querySelector('#feed');
+const feed = document.querySelector('#feed');
 showProduct();
 
 export function showProduct(list = products) {
@@ -46,33 +46,21 @@ export function showProduct(list = products) {
         productButtom.addEventListener('click', () => {
             if (!cart.itemIdIncart.includes(pd.id)) {
                 cart.itemIdIncart.push(pd.id);
-                addItem(pd.name,pd.id,0,pd.price);
-            }
+                cart.items.push({product: pd.name,productId: pd.id,qty: 0,price: pd.price});
+            }   
+            console.log(pd.name + pd.stock);
             cart.items.forEach((pc) => {
-                if(pc.productId == pd.id){
-                    pc.qty += 1;
-                    setCookie(pc.productId , pc.qty , new Date(9999,0,1).toUTCString());
-                }
+                (pc.productId == pd.id)? pc.qty += 1 : pc.qty
             })
             recalculate();
+            setCookie('cart', JSON.stringify(cart));
         })
     }
 }
 
 export function recalculate(){
-    cart.totalPrice = 0;
-    cart.totalQty = 0;
     cart.totalQty = cart.items.reduce((sum, obj) => { return sum + obj.qty; }, 0);
     cart.totalPrice = cart.items.reduce((sum, obj) => { return sum + (obj.price * obj.qty); }, 0);
     document.querySelector('#numqty').textContent = cart.totalQty;
     document.querySelector('#totalprice').textContent = cart.totalPrice + " Baht";
-}
-
-export function addItem(name,id,qty,price){
-    cart.items.push({
-        product: name,
-        productId: id,
-        qty: qty,
-        price: price
-    });
 }

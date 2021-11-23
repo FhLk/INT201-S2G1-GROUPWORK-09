@@ -22,9 +22,4 @@ export function deleteData(){
     }
 }
 
-export function setCookie(key,value,expires){ document.cookie = `${key} = ${value} ; expires= ${expires}`}
-
-//Hello am from ipad
-export function printHello(){
-	console.log('Hello am from ipad');
-}
+export function setCookie(key,value,expires = new Date(9999,0,1).toUTCString()){ document.cookie = `${key} = ${value} ; expires= ${expires}`}
