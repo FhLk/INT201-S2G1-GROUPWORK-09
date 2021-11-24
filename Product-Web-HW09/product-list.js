@@ -48,7 +48,6 @@ export function showProduct(list = products) {
                 cart.itemIdIncart.push(pd.id);
                 cart.items.push({product: pd.name,productId: pd.id,qty: 0,price: pd.price});
             }   
-            console.log(pd.name + pd.stock);
             cart.items.forEach((pc) => {
                 (pc.productId == pd.id)? pc.qty += 1 : pc.qty
             })
