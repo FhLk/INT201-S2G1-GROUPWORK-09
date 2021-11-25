@@ -26,7 +26,7 @@ button.addEventListener('click', () => {
 })
 
 function currentUser() {
-    if (localStorage.getItem('username') == null || localStorage.getItem('username') == 'null') {
+    if (localStorage.getItem('username') == null ) {
         username.innerHTML = 'Guest'
         button.innerHTML = 'Login';
     } else {
